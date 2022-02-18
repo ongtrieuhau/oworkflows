@@ -1,0 +1,11 @@
+name: Run flow 02
+on: [push]
+jobs:
+   hello_world_job:
+      runs-on: windows-latest
+      env:
+         OENV_COMMITMESSAGE: ${{ github.event.head_commit.message }}
+      name: Run flow 02 on jobs
+      steps:
+         - name: Check OENV_COMMITMESSAGE
+           run: echo "$env:OENV_COMMITMESSAGE"
